@@ -1,0 +1,17 @@
+C:\Users\misar\source\repos\Ruckus2\Ruckus2\bin\Debug\Ruckus2.exe.config
+C:\Users\misar\source\repos\Ruckus2\Ruckus2\bin\Debug\Ruckus2.exe
+C:\Users\misar\source\repos\Ruckus2\Ruckus2\bin\Debug\Ruckus2.pdb
+C:\Users\misar\source\repos\Ruckus2\Ruckus2\obj\Debug\Ruckus2.csprojAssemblyReference.cache
+C:\Users\misar\source\repos\Ruckus2\Ruckus2\obj\Debug\Ruckus2.Form1.resources
+C:\Users\misar\source\repos\Ruckus2\Ruckus2\obj\Debug\Ruckus2.Properties.Resources.resources
+C:\Users\misar\source\repos\Ruckus2\Ruckus2\obj\Debug\Ruckus2.Registro.resources
+C:\Users\misar\source\repos\Ruckus2\Ruckus2\obj\Debug\Ruckus2.csproj.GenerateResource.cache
+C:\Users\misar\source\repos\Ruckus2\Ruckus2\obj\Debug\Ruckus2.csproj.CoreCompileInputs.cache
+C:\Users\misar\source\repos\Ruckus2\Ruckus2\obj\Debug\Ruckus2.exe
+C:\Users\misar\source\repos\Ruckus2\Ruckus2\obj\Debug\Ruckus2.pdb
+C:\Users\misar\source\repos\Ruckus2\Ruckus2\obj\Debug\Ruckus2.Administrador.resources
+C:\Users\misar\source\repos\Ruckus2\Ruckus2\obj\Debug\Ruckus2.Usuario.resources
+C:\Users\misar\source\repos\Ruckus2\Ruckus2\obj\Debug\Ruckus2.Existencia.resources
+C:\Users\misar\source\repos\Ruckus2\Ruckus2\obj\Debug\Ruckus2.Movimientos.resources
+C:\Users\misar\source\repos\Ruckus2\Ruckus2\obj\Debug\Ruckus2.Reporte.resources
+C:\Users\misar\source\repos\Ruckus2\Ruckus2\obj\Debug\Ruckus2.ListaUsaurios.resources
