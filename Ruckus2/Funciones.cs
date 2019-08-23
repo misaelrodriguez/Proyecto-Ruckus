@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
 using System.Data;
-using System.Data.Sql;
-using System.Windows.Forms;
+using System.Collections;
+using System.Data.SqlClient;
+
 namespace Ruckus2
 {
     class Funciones
     {
-        SqlConnection conexion = new SqlConnection("server=LAPTOP-48CP0M82\\MSSQLSERVER1 ; database=Inventario ; integrated security = true");
+        //SqlConnection conexion = new SqlConnection("server=LAPTOP-48CP0M82\\MSSQLSERVER1 ; database=Inventario ; integrated security = true");
+        SqlConnection conexion = new SqlConnection("SERVER=DESKTOP-KSNIIKV\\SQLEXPRESS; DATABASE=Inventario; INTEGRATED SECURITY = true");
+
         private SqlCommand cmd;
         private SqlDataAdapter da;
         private DataTable dt;  
@@ -36,7 +34,6 @@ namespace Ruckus2
             return conectado;
         }
 
-
         public bool Insertar(string consulta)
         {
             bool agregado = false;
@@ -55,6 +52,7 @@ namespace Ruckus2
 
             return agregado;
         }
+
         public bool Actualizar(string consulta)
         {
             bool actualizado = false;
@@ -73,29 +71,32 @@ namespace Ruckus2
 
             return actualizado;
         }
+
         public bool Eliminar(string tabla, string condicion)
         {
-
             conexion.Open();
-            string elimina =" delete  from " + tabla + "where" + condicion;
+
+            string elimina =" DELETE FROM " + tabla + " WHERE " + condicion;
+
             cmd = new SqlCommand(elimina, conexion);
+
             int i = cmd.ExecuteNonQuery();
             conexion.Close();
+
             if (i > 0)
             {
                 return true;
             }
-
             else
             {
                 return false;
             }
-
-
         }
-        public DataTable Llenargrid(string consulta)
+
+        public DataTable LlenarGrid(string consulta)
         {
             conexion.Open();
+
             cmd = new SqlCommand(consulta, conexion);
             da = new SqlDataAdapter(cmd);
             dt = new DataTable();
@@ -106,17 +107,27 @@ namespace Ruckus2
             return dt;
         }
 
-        public DataTable Mostrar(string consulta)
+        public ArrayList Buscar(string consulta)
         {
-            conexion.Open();
-            cmd = new SqlCommand(consulta, conexion);
-            da = new SqlDataAdapter(cmd);
-            dt = new DataTable();
+            ArrayList result = new ArrayList();
 
-            da.Fill(dt);
+            conexion.Open();
+
+            cmd = new SqlCommand(consulta, conexion);
+
+            SqlDataReader info = cmd.ExecuteReader();
+
+            while (info.Read())
+            {
+                for (int i = 0; i < info.FieldCount; i++)
+                {
+                    result.Add(Convert.ToString(info.GetValue(i)));
+                }
+            }
+
             conexion.Close();
 
-            return dt;
+            return result;
         }
     }
 }

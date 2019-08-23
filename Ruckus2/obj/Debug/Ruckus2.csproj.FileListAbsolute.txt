@@ -15,3 +15,20 @@ C:\Users\misar\source\repos\Ruckus2\Ruckus2\obj\Debug\Ruckus2.Existencia.resourc
 C:\Users\misar\source\repos\Ruckus2\Ruckus2\obj\Debug\Ruckus2.Movimientos.resources
 C:\Users\misar\source\repos\Ruckus2\Ruckus2\obj\Debug\Ruckus2.Reporte.resources
 C:\Users\misar\source\repos\Ruckus2\Ruckus2\obj\Debug\Ruckus2.ListaUsaurios.resources
+C:\Users\Martin Cervantes\Desktop\Proyecto-Ruckus\Ruckus2\bin\Debug\Ruckus2.exe.config
+C:\Users\Martin Cervantes\Desktop\Proyecto-Ruckus\Ruckus2\bin\Debug\Ruckus2.exe
+C:\Users\Martin Cervantes\Desktop\Proyecto-Ruckus\Ruckus2\bin\Debug\Ruckus2.pdb
+C:\Users\Martin Cervantes\Desktop\Proyecto-Ruckus\Ruckus2\obj\Debug\Ruckus2.csprojAssemblyReference.cache
+C:\Users\Martin Cervantes\Desktop\Proyecto-Ruckus\Ruckus2\obj\Debug\Ruckus2.Administrador.resources
+C:\Users\Martin Cervantes\Desktop\Proyecto-Ruckus\Ruckus2\obj\Debug\Ruckus2.Existencia.resources
+C:\Users\Martin Cervantes\Desktop\Proyecto-Ruckus\Ruckus2\obj\Debug\Ruckus2.Login.resources
+C:\Users\Martin Cervantes\Desktop\Proyecto-Ruckus\Ruckus2\obj\Debug\Ruckus2.ListaUsaurios.resources
+C:\Users\Martin Cervantes\Desktop\Proyecto-Ruckus\Ruckus2\obj\Debug\Ruckus2.Movimientos.resources
+C:\Users\Martin Cervantes\Desktop\Proyecto-Ruckus\Ruckus2\obj\Debug\Ruckus2.Properties.Resources.resources
+C:\Users\Martin Cervantes\Desktop\Proyecto-Ruckus\Ruckus2\obj\Debug\Ruckus2.Registro.resources
+C:\Users\Martin Cervantes\Desktop\Proyecto-Ruckus\Ruckus2\obj\Debug\Ruckus2.Reporte.resources
+C:\Users\Martin Cervantes\Desktop\Proyecto-Ruckus\Ruckus2\obj\Debug\Ruckus2.Usuario.resources
+C:\Users\Martin Cervantes\Desktop\Proyecto-Ruckus\Ruckus2\obj\Debug\Ruckus2.csproj.GenerateResource.cache
+C:\Users\Martin Cervantes\Desktop\Proyecto-Ruckus\Ruckus2\obj\Debug\Ruckus2.csproj.CoreCompileInputs.cache
+C:\Users\Martin Cervantes\Desktop\Proyecto-Ruckus\Ruckus2\obj\Debug\Ruckus2.exe
+C:\Users\Martin Cervantes\Desktop\Proyecto-Ruckus\Ruckus2\obj\Debug\Ruckus2.pdb

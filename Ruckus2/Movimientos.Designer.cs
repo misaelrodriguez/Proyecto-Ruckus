@@ -34,24 +34,24 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textIdmov = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_Registros = new System.Windows.Forms.DataGridView();
             this.btnVer = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Registros)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnBuscar
-            // 
+            //
+            // btn_Buscar
+            //
             this.btnBuscar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Location = new System.Drawing.Point(216, 370);
-            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Name = "btn_Buscar";
             this.btnBuscar.Size = new System.Drawing.Size(136, 31);
             this.btnBuscar.TabIndex = 1;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
+            //
             // btnEliminar
-            // 
+            //
             this.btnEliminar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.Location = new System.Drawing.Point(404, 371);
             this.btnEliminar.Name = "btnEliminar";
@@ -60,9 +60,9 @@
             this.btnEliminar.Text = "Borrar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
+            //
             // btnLimpiar
-            // 
+            //
             this.btnLimpiar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.Location = new System.Drawing.Point(603, 371);
             this.btnLimpiar.Name = "btnLimpiar";
@@ -71,9 +71,9 @@
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
+            //
             // btnSalir
-            // 
+            //
             this.btnSalir.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.Location = new System.Drawing.Point(799, 371);
             this.btnSalir.Name = "btnSalir";
@@ -82,51 +82,51 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
+            //
             // label1
-            // 
+            //
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(67, 55);
+            this.label1.Location = new System.Drawing.Point(57, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 18);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Id de movimiento";
-            // 
+            this.label1.Text = "Id de Movimiento";
+            //
             // textIdmov
-            // 
+            //
             this.textIdmov.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textIdmov.Location = new System.Drawing.Point(70, 94);
             this.textIdmov.Name = "textIdmov";
             this.textIdmov.Size = new System.Drawing.Size(100, 26);
             this.textIdmov.TabIndex = 6;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(199, 24);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(721, 299);
-            this.dataGridView1.TabIndex = 7;
-            // 
-            // btnVer
-            // 
+            //
+            // dgv_Registros
+            //
+            this.dgv_Registros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Registros.Location = new System.Drawing.Point(199, 24);
+            this.dgv_Registros.Name = "dgv_Registros";
+            this.dgv_Registros.Size = new System.Drawing.Size(721, 299);
+            this.dgv_Registros.TabIndex = 7;
+            //
+            // btn_Ver
+            //
             this.btnVer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVer.Location = new System.Drawing.Point(60, 371);
-            this.btnVer.Name = "btnVer";
+            this.btnVer.Name = "btn_Ver";
             this.btnVer.Size = new System.Drawing.Size(99, 30);
             this.btnVer.TabIndex = 8;
             this.btnVer.Text = "Ver";
             this.btnVer.UseVisualStyleBackColor = true;
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
-            // 
+            //
             // Movimientos
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1032, 450);
             this.Controls.Add(this.btnVer);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_Registros);
             this.Controls.Add(this.textIdmov);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSalir);
@@ -136,7 +136,7 @@
             this.Name = "Movimientos";
             this.Text = "Movimientos";
             this.Load += new System.EventHandler(this.Movimientos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Registros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,7 +149,7 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textIdmov;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_Registros;
         private System.Windows.Forms.Button btnVer;
     }
 }

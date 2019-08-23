@@ -1,103 +1,80 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 
 namespace Ruckus2
 {
     public partial class Existencia : Form
     {
-        SqlConnection conexion = new SqlConnection("server=LAPTOP-48CP0M82\\MSSQLSERVER1 ; database=Inventario ; integrated security = true");
+        Funciones fn = new Funciones();
+
         public Existencia()
         {
             InitializeComponent();
         }
-            Funciones fn = new Funciones();
-        private void button1_Click(object sender, EventArgs e)
-        {
-            SqlConnection conexion = new SqlConnection("server=LAPTOP-48CP0M82\\MSSQLSERVER1 ; database=Inventario ; integrated security = true");
-            conexion.Open();
-            string buscar = "Select * from Existencia Where No_parte = '" + textNum.Text + "' ";
-            SqlCommand cmd = new SqlCommand(buscar);
-            SqlDataAdapter mostrar = new SqlDataAdapter(buscar, conexion);
-            DataTable movi = new DataTable();
-            mostrar.Fill(movi);
-            dgvRegistro.DataSource = movi;
-            conexion.Close();
-            
-        }
 
         private void Existencia_Load(object sender, EventArgs e)
         {
-            dgvRegistro.DataSource = fn.Llenargrid("select * from Existencia");
+            dgv_Registros.DataSource = fn.LlenarGrid("SELECT * FROM Existencias");
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void btnVer_Click(object sender, EventArgs e)
         {
-
+            dgv_Registros.DataSource = fn.LlenarGrid("SELECT * FROM Existencias");
         }
 
-        private void textBox5_TextChanged(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
-
+            dgv_Registros.DataSource = fn.LlenarGrid("SELECT * FROM Existencias WHERE No_parte = '" + textNum.Text + "'");
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
-            string agregar = "insert into Existencia (No_parte, Descripcion, Modelo, Categoria, Localidad, Cantidad, CostoUnitario, CantidadMin, CantidadMax, Usuario) values('" + textNum.Text + "','" + textDes.Text + "', '" + textMode.Text + "','" + comboCat.Text + "', '" + textLocal.Text +"', '"+ textCant.Text +"', '" + textCosto.Text +"','"+ textMin.Text +"','"+ textMax.Text +"','" + textUser.Text +"')";
-            if (fn.Insertar(agregar))
+            string query = "INSERT INTO Existencias (No_parte, Descripcion, Modelo, Categoria, Localidad, Cantidad, CostoUnitario, CantidadMin, CantidadMax, Usuario) VALUES('" + textNum.Text + "', '" + textDes.Text + "', '" + textMode.Text + "', '" + comboCat.Text + "', '" + textLocal.Text + "', '" + textCant.Text + "', '" + textCosto.Text + "','" + textMin.Text + "','" + textMax.Text + "','" + textUser.Text + "')";
 
-
+            if (fn.Insertar(query))
             {
-                MessageBox.Show("Agregado con exito");
-                dgvRegistro.DataSource = fn.Llenargrid("select * from Existencia");
+                MessageBox.Show("Agregado con exito", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                dgv_Registros.DataSource = fn.LlenarGrid("SELECT * FROM Existencias");
             }
             else
             {
-                MessageBox.Show("Error al Agregar");
+                MessageBox.Show("Error al Agregar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnModificar_Click(object sender, EventArgs e)
         {
-            string actualizar = "update Existencia SET Descripcion= '" + textDes.Text + "', Modelo= '" + textMode.Text + "', Categoria= '" + comboCat.Text + "', Localidad= '" + textLocal.Text + "', Cantidad= '" + textCant.Text + "',CostoUnitario= '" + textCosto.Text + "', CantidadMin= '" + textMin.Text + "', CantidadMax= '" + textMax.Text + "', Usuario= '" + textUser.Text + "' WHERE No_parte= '" + textNum.Text + "'";
-            if (fn.Actualizar(actualizar))
+            string query = "UPDATE Existencias SET Descripcion = '" + textDes.Text + "', Modelo = '" + textMode.Text + "', Categoria = '" + comboCat.Text + "', Localidad = '" + textLocal.Text + "', Cantidad = '" + textCant.Text + "', CostoUnitario = '" + textCosto.Text + "', CantidadMin = '" + textMin.Text + "', CantidadMax = '" + textMax.Text + "', Usuario = '" + textUser.Text + "' WHERE No_parte = '" + textNum.Text + "'";
+
+            if (fn.Actualizar(query))
             {
-                MessageBox.Show("Registro actualiado");
-                dgvRegistro.DataSource = fn.Llenargrid("select * from Existencia");
+                MessageBox.Show("Registro actualiado", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                dgv_Registros.DataSource = fn.LlenarGrid("SELECT * FROM Existencias");
             }
             else
             {
-                MessageBox.Show("Error al actualizar");
-
+                MessageBox.Show("Error al actualizar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
-            SqlConnection conexion = new SqlConnection("server=LAPTOP-48CP0M82\\MSSQLSERVER1 ; database=Inventario ; integrated security = true");
-            conexion.Open();
-            string eliminar = "Delete from Existencia Where No_parte = '" + textNum.Text + "' ";
-            SqlCommand cmd = new SqlCommand(eliminar);
-            SqlDataAdapter mostrar = new SqlDataAdapter(eliminar, conexion);
-            DataTable movi = new DataTable();
-            mostrar.Fill(movi);
-            dgvRegistro.DataSource = movi;
-            MessageBox.Show("Registro eliminado");
-            dgvRegistro.DataSource = fn.Llenargrid("select * from Existencia");
+            if (fn.Eliminar("Existencias", "No_parte = '" + textNum.Text + "'"))
+            {
+                MessageBox.Show("Registro eliminado", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            conexion.Close();
-        
+                dgv_Registros.DataSource = fn.LlenarGrid("SELECT * FROM Existencias");
+            }
+            else
+            {
+                MessageBox.Show("Error al eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void btnLimpiar_Click(object sender, EventArgs e)
         {
             textNum.Clear();
             textDes.Clear();
@@ -108,16 +85,17 @@ namespace Ruckus2
             textMin.Clear();
             textLocal.Clear();
             textUser.Clear();
+            comboCat.SelectedIndex = -1;
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
         private void DgvRegistro_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow dgv = dgvRegistro.Rows[e.RowIndex];
+            DataGridViewRow dgv = dgv_Registros.Rows[e.RowIndex];
 
             textNum.Text = dgv.Cells[0].Value.ToString();
             textDes.Text = dgv.Cells[1].Value.ToString();
@@ -130,21 +108,5 @@ namespace Ruckus2
             textMax.Text = dgv.Cells[8].Value.ToString();
             textUser.Text = dgv.Cells[9].Value.ToString();
         }
-
-        private void btnVer_Click(object sender, EventArgs e)
-        {
-            dgvRegistro.DataSource = fn.Llenargrid("select * from Existencia");
-        }
     }
 }
-
-
-//if (fn.Eliminar ("Existencia", "No_parte=" + textNum.Text))
-//{
-//    MessageBox.Show("Registro eliminado");
-//    dgvRegistro.DataSource = fn.Llenargrid("select * from Existencia");
-//}
-//else
-//{
-//    MessageBox.Show("Error al eliminar");
-//}

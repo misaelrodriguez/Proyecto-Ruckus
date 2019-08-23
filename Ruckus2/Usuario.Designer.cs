@@ -43,9 +43,9 @@
             this.textCanti = new System.Windows.Forms.TextBox();
             this.textUser = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.btninsertar = new System.Windows.Forms.Button();
-            this.btnlimpiar = new System.Windows.Forms.Button();
-            this.btndisponible = new System.Windows.Forms.Button();
+            this.btnRequerir = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnDisponible = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.textDisponible = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -58,7 +58,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 18);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Numero de Parte";
+            this.label1.Text = "Número de Parte";
             // 
             // label2
             // 
@@ -68,7 +68,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 18);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Descripcion";
+            this.label2.Text = "Descripción";
             // 
             // label3
             // 
@@ -86,9 +86,9 @@
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(82, 182);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 18);
+            this.label4.Size = new System.Drawing.Size(77, 18);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Categoria";
+            this.label4.Text = "Categoría";
             // 
             // label5
             // 
@@ -187,38 +187,38 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // btninsertar
+            // btnRequerir
             // 
-            this.btninsertar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btninsertar.Location = new System.Drawing.Point(299, 355);
-            this.btninsertar.Name = "btninsertar";
-            this.btninsertar.Size = new System.Drawing.Size(157, 32);
-            this.btninsertar.TabIndex = 15;
-            this.btninsertar.Text = "Requerir";
-            this.btninsertar.UseVisualStyleBackColor = true;
-            this.btninsertar.Click += new System.EventHandler(this.btninsertar_Click);
+            this.btnRequerir.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRequerir.Location = new System.Drawing.Point(299, 355);
+            this.btnRequerir.Name = "btnRequerir";
+            this.btnRequerir.Size = new System.Drawing.Size(157, 32);
+            this.btnRequerir.TabIndex = 15;
+            this.btnRequerir.Text = "Requerir";
+            this.btnRequerir.UseVisualStyleBackColor = true;
+            this.btnRequerir.Click += new System.EventHandler(this.btnRequerir_Click);
             // 
-            // btnlimpiar
+            // btnLimpiar
             // 
-            this.btnlimpiar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlimpiar.Location = new System.Drawing.Point(701, 355);
-            this.btnlimpiar.Name = "btnlimpiar";
-            this.btnlimpiar.Size = new System.Drawing.Size(157, 32);
-            this.btnlimpiar.TabIndex = 16;
-            this.btnlimpiar.Text = "Limpiar";
-            this.btnlimpiar.UseVisualStyleBackColor = true;
-            this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click);
+            this.btnLimpiar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Location = new System.Drawing.Point(701, 355);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(157, 32);
+            this.btnLimpiar.TabIndex = 16;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // btndisponible
+            // btnDisponible
             // 
-            this.btndisponible.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btndisponible.Location = new System.Drawing.Point(500, 355);
-            this.btndisponible.Name = "btndisponible";
-            this.btndisponible.Size = new System.Drawing.Size(157, 32);
-            this.btndisponible.TabIndex = 17;
-            this.btndisponible.Text = "Disponible";
-            this.btndisponible.UseVisualStyleBackColor = true;
-            this.btndisponible.Click += new System.EventHandler(this.btndisponible_Click);
+            this.btnDisponible.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDisponible.Location = new System.Drawing.Point(500, 355);
+            this.btnDisponible.Name = "btnDisponible";
+            this.btnDisponible.Size = new System.Drawing.Size(157, 32);
+            this.btnDisponible.TabIndex = 17;
+            this.btnDisponible.Text = "Disponible";
+            this.btnDisponible.UseVisualStyleBackColor = true;
+            this.btnDisponible.Click += new System.EventHandler(this.btnDisponible_Click);
             // 
             // label8
             // 
@@ -245,9 +245,9 @@
             this.ClientSize = new System.Drawing.Size(958, 450);
             this.Controls.Add(this.textDisponible);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.btndisponible);
-            this.Controls.Add(this.btnlimpiar);
-            this.Controls.Add(this.btninsertar);
+            this.Controls.Add(this.btnDisponible);
+            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.btnRequerir);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.textUser);
             this.Controls.Add(this.textCanti);
@@ -266,7 +266,6 @@
             this.Name = "Usuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuario";
-            this.Load += new System.EventHandler(this.Usuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,9 +288,9 @@
         private System.Windows.Forms.TextBox textCanti;
         private System.Windows.Forms.TextBox textUser;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Button btninsertar;
-        private System.Windows.Forms.Button btnlimpiar;
-        private System.Windows.Forms.Button btndisponible;
+        private System.Windows.Forms.Button btnRequerir;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnDisponible;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textDisponible;
     }

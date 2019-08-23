@@ -49,14 +49,14 @@
             this.textUser = new System.Windows.Forms.TextBox();
             this.comboCat = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.dgvRegistro = new System.Windows.Forms.DataGridView();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.dgv_Registros = new System.Windows.Forms.DataGridView();
             this.btnVer = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Registros)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -67,7 +67,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 18);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Numero de Parte";
+            this.label1.Text = "Número de Parte";
             // 
             // label2
             // 
@@ -77,7 +77,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 18);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Descripcion";
+            this.label2.Text = "Descripción";
             // 
             // label3
             // 
@@ -95,9 +95,9 @@
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(55, 122);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 18);
+            this.label4.Size = new System.Drawing.Size(77, 18);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Categoria";
+            this.label4.Text = "Categoría";
             // 
             // label5
             // 
@@ -135,9 +135,9 @@
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(55, 249);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(127, 18);
+            this.label8.Size = new System.Drawing.Size(126, 18);
             this.label8.TabIndex = 7;
-            this.label8.Text = "Cantidad Minima";
+            this.label8.Text = "Cantidad Mínima";
             // 
             // label9
             // 
@@ -147,7 +147,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(131, 18);
             this.label9.TabIndex = 8;
-            this.label9.Text = "Cantidad Maxima";
+            this.label9.Text = "Cantidad Máxima";
             // 
             // label10
             // 
@@ -174,7 +174,6 @@
             this.textDes.Name = "textDes";
             this.textDes.Size = new System.Drawing.Size(171, 26);
             this.textDes.TabIndex = 11;
-            this.textDes.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textMode
             // 
@@ -190,7 +189,7 @@
             this.textLocal.Location = new System.Drawing.Point(192, 145);
             this.textLocal.Name = "textLocal";
             this.textLocal.Size = new System.Drawing.Size(171, 26);
-            this.textLocal.TabIndex = 13;
+            this.textLocal.TabIndex = 14;
             // 
             // textCant
             // 
@@ -198,8 +197,7 @@
             this.textCant.Location = new System.Drawing.Point(192, 177);
             this.textCant.Name = "textCant";
             this.textCant.Size = new System.Drawing.Size(171, 26);
-            this.textCant.TabIndex = 14;
-            this.textCant.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.textCant.TabIndex = 15;
             // 
             // textCosto
             // 
@@ -207,7 +205,7 @@
             this.textCosto.Location = new System.Drawing.Point(192, 209);
             this.textCosto.Name = "textCosto";
             this.textCosto.Size = new System.Drawing.Size(171, 26);
-            this.textCosto.TabIndex = 15;
+            this.textCosto.TabIndex = 16;
             // 
             // textMin
             // 
@@ -215,7 +213,7 @@
             this.textMin.Location = new System.Drawing.Point(192, 241);
             this.textMin.Name = "textMin";
             this.textMin.Size = new System.Drawing.Size(171, 26);
-            this.textMin.TabIndex = 16;
+            this.textMin.TabIndex = 17;
             // 
             // textMax
             // 
@@ -223,7 +221,7 @@
             this.textMax.Location = new System.Drawing.Point(192, 273);
             this.textMax.Name = "textMax";
             this.textMax.Size = new System.Drawing.Size(171, 26);
-            this.textMax.TabIndex = 17;
+            this.textMax.TabIndex = 18;
             // 
             // textUser
             // 
@@ -231,7 +229,7 @@
             this.textUser.Location = new System.Drawing.Point(192, 305);
             this.textUser.Name = "textUser";
             this.textUser.Size = new System.Drawing.Size(171, 26);
-            this.textUser.TabIndex = 18;
+            this.textUser.TabIndex = 19;
             // 
             // comboCat
             // 
@@ -244,7 +242,7 @@
             this.comboCat.Location = new System.Drawing.Point(192, 114);
             this.comboCat.Name = "comboCat";
             this.comboCat.Size = new System.Drawing.Size(171, 26);
-            this.comboCat.TabIndex = 19;
+            this.comboCat.TabIndex = 13;
             // 
             // btnBuscar
             // 
@@ -252,74 +250,74 @@
             this.btnBuscar.Location = new System.Drawing.Point(205, 378);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(105, 31);
-            this.btnBuscar.TabIndex = 20;
+            this.btnBuscar.TabIndex = 21;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.button1_Click);
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // button2
+            // btnGuardar
             // 
-            this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(354, 378);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 31);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Guardar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnGuardar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(354, 378);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(94, 31);
+            this.btnGuardar.TabIndex = 22;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // button3
+            // btnModificar
             // 
-            this.button3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(497, 378);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(93, 31);
-            this.button3.TabIndex = 22;
-            this.button3.Text = "Modificar";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnModificar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Location = new System.Drawing.Point(497, 378);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(93, 31);
+            this.btnModificar.TabIndex = 23;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // button4
+            // btnEliminar
             // 
-            this.button4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(638, 379);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(103, 31);
-            this.button4.TabIndex = 23;
-            this.button4.Text = "Eliminar";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnEliminar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(638, 379);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(103, 31);
+            this.btnEliminar.TabIndex = 24;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // button6
+            // btnLimpiar
             // 
-            this.button6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(793, 379);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(94, 30);
-            this.button6.TabIndex = 25;
-            this.button6.Text = "Limpiar";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnLimpiar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Location = new System.Drawing.Point(793, 379);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(94, 30);
+            this.btnLimpiar.TabIndex = 25;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // button7
+            // btnSalir
             // 
-            this.button7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(931, 379);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(94, 30);
-            this.button7.TabIndex = 26;
-            this.button7.Text = "Salir";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btnSalir.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(931, 379);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(94, 30);
+            this.btnSalir.TabIndex = 26;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // dgvRegistro
+            // dgv_Registros
             // 
-            this.dgvRegistro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRegistro.Location = new System.Drawing.Point(369, 17);
-            this.dgvRegistro.Name = "dgvRegistro";
-            this.dgvRegistro.Size = new System.Drawing.Size(656, 314);
-            this.dgvRegistro.TabIndex = 27;
-            this.dgvRegistro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvRegistro_CellContentClick);
+            this.dgv_Registros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Registros.Location = new System.Drawing.Point(369, 17);
+            this.dgv_Registros.Name = "dgv_Registros";
+            this.dgv_Registros.Size = new System.Drawing.Size(656, 314);
+            this.dgv_Registros.TabIndex = 27;
+            this.dgv_Registros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvRegistro_CellContentClick);
             // 
             // btnVer
             // 
@@ -327,7 +325,7 @@
             this.btnVer.Location = new System.Drawing.Point(58, 379);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(105, 31);
-            this.btnVer.TabIndex = 28;
+            this.btnVer.TabIndex = 20;
             this.btnVer.Text = "Ver";
             this.btnVer.UseVisualStyleBackColor = true;
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
@@ -338,12 +336,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 450);
             this.Controls.Add(this.btnVer);
-            this.Controls.Add(this.dgvRegistro);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.dgv_Registros);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.comboCat);
             this.Controls.Add(this.textUser);
@@ -369,7 +367,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Existencia";
             this.Load += new System.EventHandler(this.Existencia_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Registros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,13 +395,13 @@
         private System.Windows.Forms.TextBox textMax;
         private System.Windows.Forms.TextBox textUser;
         private System.Windows.Forms.ComboBox comboCat;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.DataGridView dgvRegistro;
         private System.Windows.Forms.Button btnVer;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.DataGridView dgv_Registros;
     }
 }

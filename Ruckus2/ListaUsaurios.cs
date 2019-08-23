@@ -1,71 +1,66 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace Ruckus2
 {
     public partial class ListaUsaurios : Form
     {
+        Funciones fn = new Funciones();
+
         public ListaUsaurios()
         {
             InitializeComponent();
         }
-        Funciones fn = new Funciones();
+
         private void ListaUsaurios_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = fn.Llenargrid("select * from Usuarios");
+            dgv_Registros.DataSource = fn.LlenarGrid("SELECT * FROM Usuarios");
         }
 
         private void btnRegistro_Click(object sender, EventArgs e)
         {
-            string agregar = "insert into usuarios values ( '" + textUser.Text + "', '" + textNom.Text + "','" + textCon.Text + "','" + comboBox1.Text + "')";
+            string agregar = "INSERT INTO Usuarios VALUES ( '" + textUser.Text + "', '" + textNom.Text + "','" + textCon.Text + "','" + comboTipo.Text + "')";
+
             if (fn.Insertar(agregar))
             {
-                MessageBox.Show("Registro con exito");
-                dataGridView1.DataSource = fn.Llenargrid("select * from Usuarios");
+                MessageBox.Show("Registro con exito", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                dgv_Registros.DataSource = fn.LlenarGrid("SELECT * FROM Usuarios");
             }
             else
             {
-                MessageBox.Show("Error al registrar");
+                MessageBox.Show("Error al registrar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void btnmodificar_Click(object sender, EventArgs e)
+        private void btnModificar_Click(object sender, EventArgs e)
         {
-            string actualizar = "update usuarios SET Nombre= '" + textNom.Text + "', Contraseña= '" + textCon.Text + "', Tipo_user= '" + comboBox1.Text + "' Where Id_user = '" + textUser.Text + "' ";
+            string actualizar = "UPDATE Usuarios SET Nombre= '" + textNom.Text + "', Contrasena= '" + textCon.Text + "', Tipo_user= '" + comboTipo.Text + "' WHERE Id_user = '" + textUser.Text + "' ";
+
             if (fn.Actualizar(actualizar))
             {
-                MessageBox.Show("Registro actualizado");
-                dataGridView1.DataSource = fn.Llenargrid("select * from Usuarios");
+                MessageBox.Show("Registro actualizado", "Correto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                dgv_Registros.DataSource = fn.LlenarGrid("SELECT * FROM Usuarios");
             }
             else
             {
-                MessageBox.Show("Error al actualizar");
+                MessageBox.Show("Error al actualizar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            SqlConnection conexion = new SqlConnection("server=LAPTOP-48CP0M82\\MSSQLSERVER1 ; database=Inventario ; integrated security = true");
-            conexion.Open();
-            string eliminar = "Delete from Usuarios Where Id_user = '" + textUser.Text + "' ";
-            SqlCommand cmd = new SqlCommand(eliminar);
-            SqlDataAdapter mostrar = new SqlDataAdapter(eliminar, conexion);
-            DataTable movi = new DataTable();
-            mostrar.Fill(movi);
-            dataGridView1.DataSource = movi;
-            MessageBox.Show("Registro eliminado");
-            dataGridView1.DataSource = fn.Llenargrid("select * from Usuarios");
+            if (fn.Eliminar("Usuarios", "Id_user = '" + textUser.Text + "'"))
+            {
+                MessageBox.Show("Registro eliminado", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            conexion.Close();
-
+                dgv_Registros.DataSource = fn.LlenarGrid("SELECT * FROM Usuarios");
+            }
+            else
+            {
+                MessageBox.Show("Error al eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -73,6 +68,7 @@ namespace Ruckus2
             textUser.Clear();
             textNom.Clear();
             textCon.Clear();
+            comboTipo.SelectedIndex = -1;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -80,13 +76,13 @@ namespace Ruckus2
             this.Close();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgv_Registros_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow dgv = dataGridView1.Rows[e.RowIndex];
+            DataGridViewRow dgv = dgv_Registros.Rows[e.RowIndex];
             textUser.Text = dgv.Cells[0].Value.ToString();
             textNom.Text = dgv.Cells[1].Value.ToString();
             textCon.Text = dgv.Cells[2].Value.ToString();
-            comboBox1.Text = dgv.Cells[3].Value.ToString();
+            comboTipo.Text = dgv.Cells[3].Value.ToString();
         }
     }
 }
