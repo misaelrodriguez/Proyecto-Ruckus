@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections;
 using System.Windows.Forms;
 using System.Data.SqlClient;    
 
@@ -13,61 +7,80 @@ namespace Ruckus2
 {
     public partial class Usuario : Form
     {
-        SqlConnection conexion = new SqlConnection("server=LAPTOP-48CP0M82\\MSSQLSERVER1 ; database=Inventario ; integrated security = true");
+        Funciones fn = new Funciones();
+
         public Usuario()
         {
             InitializeComponent();
         }
 
-        private void Usuario_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string cadsql = "select Descripcion, Modelo, Categoria, Localidad From Existencia Where No_parte = '" + textNo_part.Text + "'";
-            SqlCommand comando = new SqlCommand(cadsql, conexion);
-            conexion.Open();
-            SqlDataReader leer = comando.ExecuteReader();
-            if (leer.Read() == true)
+            string query = "SELECT Descripcion, Modelo, Categoria, Localidad, Cantidad, Usuario FROM Existencias WHERE No_parte = '" + textNo_part.Text + "'";
+
+            ArrayList data = new ArrayList();
+
+            data = fn.Buscar(query);
+
+            if (data.Count > 0)
             {
-                textDescripcion.Text = leer["Descripcion"].ToString();
-                textModel.Text = leer["Modelo"].ToString();
-                textCatego.Text = leer["Categoria"].ToString();
-                textLocal.Text = leer["Localidad"].ToString();
+                textDescripcion.Text = data[0].ToString();
+                textModel.Text = data[1].ToString();
+                textCatego.Text = data[2].ToString();
+                textLocal.Text = data[3].ToString();
+                textCanti.Text = data[4].ToString();
+                textUser.Text = data[5].ToString();
                 //MessageBox.Show("El componente esta en existencia");
             }
             else
             {
-                MessageBox.Show("No se encuentra en existencia");
+                MessageBox.Show("No se encuentra en existencia", "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 textDescripcion.Text = "";
                 textModel.Text = "";
                 textCatego.Text = "";
                 textLocal.Text = "";
-               
+                textCanti.Text = "";
+                textUser.Text = "";
             }
-            conexion.Close();
         }
-        Funciones fn = new Funciones();
-        private void btninsertar_Click(object sender, EventArgs e)
+        
+        private void btnRequerir_Click(object sender, EventArgs e)
         {
-            string agregar = "insert into Movimientos (No_parte, Descripcion, Modelo, Categoria, Localidad, Cantidad, Usuario) values ('" + textNo_part.Text + "', '" + textDescripcion.Text + "', '" + textModel.Text + "', '" + textCatego.Text + "', '" + textLocal.Text + "', '" + textCanti.Text +"', '" + textUser.Text + "' )";
-            if (fn.Insertar(agregar))
+            string query = "INSERT INTO Movimientos (No_parte, Descripcion, Modelo, Categoria, Localidad, Cantidad, Usuario) VALUES ('" + textNo_part.Text + "', '" + textDescripcion.Text + "', '" + textModel.Text + "', '" + textCatego.Text + "', '" + textLocal.Text + "', '" + textCanti.Text +"', '" + textUser.Text + "' )";
 
-
+            if (fn.Insertar(query))
             {
-                MessageBox.Show("Requerimiento con exito");
+                MessageBox.Show("Requerimiento con exito", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Error al requerir");
+                MessageBox.Show("Error al requerir", "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
-
         }
 
-        private void btnlimpiar_Click(object sender, EventArgs e)
+        private void btnDisponible_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT Cantidad FROM Existencias WHERE No_parte = '" + textNo_part.Text + "'";
+
+            ArrayList data = new ArrayList();
+
+            data = fn.Buscar(query);
+
+            if (data.Count > 0)
+            {
+                textDisponible.Text = data[0].ToString();
+                //MessageBox.Show("El componente esta en existencia");
+            }
+            else
+            {
+                MessageBox.Show("No se encuentra en existencia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                textDisponible.Text = "";
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
         {
             textNo_part.Clear();
             textDescripcion.Clear();
@@ -77,20 +90,6 @@ namespace Ruckus2
             textCanti.Clear();
             textUser.Clear();
             textDisponible.Clear();
-        }
-
-        private void btndisponible_Click(object sender, EventArgs e)
-        {
-            
-         SqlCommand comando = new SqlCommand("select cantidad From Existencia Where No_parte = '" + textNo_part.Text + "'", conexion);
-            comando.Parameters.AddWithValue("No_parte", textNo_part.Text);
-            conexion.Open();
-            SqlDataReader registro = comando.ExecuteReader();
-            if (registro.Read())
-            {
-                textDisponible.Text = registro["Cantidad"].ToString();
-            }
-            conexion.Close();
         }
     } 
 }

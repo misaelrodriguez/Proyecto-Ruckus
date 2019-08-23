@@ -35,14 +35,14 @@
             this.textUser = new System.Windows.Forms.TextBox();
             this.textNom = new System.Windows.Forms.TextBox();
             this.textCon = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.comboTipo = new System.Windows.Forms.ComboBox();
+            this.dgv_Registros = new System.Windows.Forms.DataGridView();
             this.btnRegistro = new System.Windows.Forms.Button();
-            this.btnmodificar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Registros)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -109,26 +109,26 @@
             this.textCon.Size = new System.Drawing.Size(155, 26);
             this.textCon.TabIndex = 6;
             // 
-            // comboBox1
+            // comboTipo
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboTipo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboTipo.FormattingEnabled = true;
+            this.comboTipo.Items.AddRange(new object[] {
             "admin",
             "user"});
-            this.comboBox1.Location = new System.Drawing.Point(204, 251);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(155, 26);
-            this.comboBox1.TabIndex = 7;
+            this.comboTipo.Location = new System.Drawing.Point(204, 251);
+            this.comboTipo.Name = "comboTipo";
+            this.comboTipo.Size = new System.Drawing.Size(155, 26);
+            this.comboTipo.TabIndex = 7;
             // 
-            // dataGridView1
+            // dgv_Registros
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(388, 33);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(419, 244);
-            this.dataGridView1.TabIndex = 8;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgv_Registros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Registros.Location = new System.Drawing.Point(388, 33);
+            this.dgv_Registros.Name = "dgv_Registros";
+            this.dgv_Registros.Size = new System.Drawing.Size(419, 244);
+            this.dgv_Registros.TabIndex = 8;
+            this.dgv_Registros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Registros_CellContentClick);
             // 
             // btnRegistro
             // 
@@ -141,16 +141,16 @@
             this.btnRegistro.UseVisualStyleBackColor = true;
             this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
             // 
-            // btnmodificar
+            // btnModificar
             // 
-            this.btnmodificar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmodificar.Location = new System.Drawing.Point(222, 333);
-            this.btnmodificar.Name = "btnmodificar";
-            this.btnmodificar.Size = new System.Drawing.Size(99, 31);
-            this.btnmodificar.TabIndex = 10;
-            this.btnmodificar.Text = "Modificar";
-            this.btnmodificar.UseVisualStyleBackColor = true;
-            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
+            this.btnModificar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Location = new System.Drawing.Point(222, 333);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(99, 31);
+            this.btnModificar.TabIndex = 10;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -193,10 +193,10 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnmodificar);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnRegistro);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dgv_Registros);
+            this.Controls.Add(this.comboTipo);
             this.Controls.Add(this.textCon);
             this.Controls.Add(this.textNom);
             this.Controls.Add(this.textUser);
@@ -206,9 +206,9 @@
             this.Controls.Add(this.label1);
             this.Name = "ListaUsaurios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ListaUsaurios";
+            this.Text = "Lista de Usuarios";
             this.Load += new System.EventHandler(this.ListaUsaurios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Registros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,10 +223,10 @@
         private System.Windows.Forms.TextBox textUser;
         private System.Windows.Forms.TextBox textNom;
         private System.Windows.Forms.TextBox textCon;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox comboTipo;
+        private System.Windows.Forms.DataGridView dgv_Registros;
         private System.Windows.Forms.Button btnRegistro;
-        private System.Windows.Forms.Button btnmodificar;
+        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnSalir;

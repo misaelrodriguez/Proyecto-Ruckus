@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ruckus2
@@ -17,33 +10,33 @@ namespace Ruckus2
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnExistencias_Click(object sender, EventArgs e)
         {
-            Existencia es = new Existencia();
-            es.Show();
+            Existencia ex = new Existencia();
+            ex.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnMovimientos_Click(object sender, EventArgs e)
         {
             Movimientos mo = new Movimientos();
-            mo.Show();
+            mo.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnReporte_Click(object sender, EventArgs e)
         {
             Reporte re = new Reporte();
-            re.Show();
+            re.ShowDialog();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnListaUsuarios_Click(object sender, EventArgs e)
         {
             ListaUsaurios lis = new ListaUsaurios();
-            lis.Show();
+            lis.ShowDialog();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
 }
